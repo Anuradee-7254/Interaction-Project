@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitMeasure</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="homepage.html" class="logo"><img src="img/logo1.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="resources.html">Resource</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="#" class="user-icon"><img src="img/userblack-removebg-preview.png" alt="User Profile"></a>
+            </div>
+        </nav>
+
+    <div class="text-box">
+        <h1>WHAT IS <span class="highlight">BMI?</span></h1>
+        <p>Body Mass Index (BMI) is a numerical value derived from an individual's weight and height.
+           It is used as a simple and quick screening tool to categorize people into different weight categories,
+           which can indicate potential health risks associated with being underweight, normal weight, overweight, or obese.
+           While BMI is a useful tool and can give a general indication of whether an individual has a healthy body weight,
+           it does have limitations. BMI does not directly measure body fat, and it does not take into account factors such as muscle mass, bone density,
+           overall body composition, and racial and sex differences.<br>
+           <br>It's important to use BMI along with other health assessments and indicators for a complete evaluation of an individual's health.
+           Consulting healthcare professionals for personalized advice is recommended.
+        </p>
+    </div>
+    
+    <div class="container">
+        <h1>BMI calculator</h1>
+        <form id="bmiForm">
+            <div class="input-group">
+                <label for="height">Enter height</label>
+                <input type="number" id="height" placeholder="meters" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="weight">Enter weight</label>
+                <input type="number" id="weight" placeholder="kilograms" step="0.01" required>
+            </div>
+            <button type="submit" class="calculate">Calculate BMI</button>
+        </form>
+        <div id="outcome"></div>
+    </div>
+
+    <script src="script.js"></script>
+    </section>
+
+    <!---- RESULT ---->
+
+    <section class="result">
+        <h1>RESULTS</h1>
+        <p>The value obtained from the calculation of BMI is used to categorize whether a person is.</p>
+
+        <div class="row">
+            <div class="result-col">
+                <img src="img/yellow.png">
+                <h3>Underweight</h3>
+                <p>Your BMI is below 18.5, indicating that you are underweight.
+                 It may be beneficial to consult with a healthcare provider to ensure
+                 you're meeting your nutritional needs.</p>
+            </div>
+            <div class="result-col">
+                <img src="img/green.png">
+                <h3>Normal Weight</h3>
+                <p>Your BMI is between 18.5 and 24.9, which is considered a healthy weight range.
+                 Maintaining a balanced diet and regular physical activity is recommended for continued well-being.</p>
+            </div>
+            <div class="result-col">
+                <img src="img/orange.png">
+                <h3>Overweight</h3>
+                <p>Your BMI falls between 25 and 29.9, which is classified as overweight.
+                 Adopting a healthier diet and increasing physical activity can help manage your weight and reduce potential health risks.</p>
+            </div>
+            <div class="result-col">
+                <img src="img/red.png">
+                <h3>Obesity</h3>
+                <p>Your BMI is 30 or above, placing you in the obesity category.
+                 It’s advisable to seek guidance from a healthcare professional to develop a plan for weight management and overall health improvement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!---- management ---->
+
+    <section class="management">
+        <h1>HOW TO MANAGE WEIGHT</h1>
+        <p>To avoid the risk of various illnesses, we need to maintain our health and keep our weight within a suitable range.
+            Effective weight management is actually not as difficult as it seems. It involves controlling your diet and engaging in regular exercise.</p>
+
+        <div class="manage-row">
+            <div class="food-row">
+                <div class="food-col">
+                    <img src="img/food3vertical_482x722.jpeg">
+                </div>
+                <div class="foodparagraph-col">
+                    <h3>FOOD</h3>
+                    <p>Diet control is not about starving yourself. The key to maintaining a healthy weight is to consume a balanced diet with all five food groups in appropriate amounts according to nutritional guidelines.
+                    For example, working women should aim to consume 1,200-1,600 calories per day, while working men should aim for 1,800-2,000 calories per day, depending on their daily activities.<br>
+                    <br>For those who engage in intense physical activity, such as athletes, a higher caloric intake may be appropriate. Conversely, individuals with significant obesity should gradually reduce their calorie intake rather than making abrupt cuts.
+                    Medical advice suggests that a gradual reduction of 500 calories per day can help achieve an average weight loss of 1-2 kilograms per month.</p>
+                </div>
+            </div>
+
+            <div class="exercise-row">
+                <div class="exerciseparagraph-col">
+                    <h3>EXERCISE</h3>
+                    <p>After establishing a balanced diet, it's crucial to pair it with consistent exercise. Physical activity burns extra calories and helps rebuild muscle mass that may have been lost during weight reduction.
+                     This balance supports weight maintenance and overall long-term health. Exercise also improves cardiovascular health, enhances mood, boosts energy levels, and can even help manage and prevent chronic diseases such as diabetes and heart disease.<br>
+                     <br>An effective exercise regimen should involve physical activity three times a week, with each session lasting between 20 to 60 minutes. It's important to incorporate a mix of aerobic exercises, such as running,
+                     cycling, or swimming, and strength training exercises, like weightlifting or body-weight exercises, to target different aspects of fitness. Stretching and flexibility exercises, such as yoga or Pilates, can also be beneficial for maintaining a range of motion and preventing injuries.
+                     For individuals who are significantly overweight, starting with light activities such as walking or gently moving different body parts is recommended.
+                     Consulting a healthcare professional or a certified fitness trainer can provide personalized guidance and support to ensure safe and effective exercise practices.</p>
+                </div>
+                <div class="exercise-col">
+                    <img src="img/gym3_669x722.jpeg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---- disease ---->
+
+    <section class="disease">
+        <h1>DISEASE</h1>
+        <p>Being overweight or obese can lead to various negative consequences.</p>
+
+        <div class="row">
+            <div class="disease-col">
+                <img src="img/fat.jpeg">
+                <h3>Diabetes</h3>
+                <p>Obesity can lead to diabetes by causing ineffective insulin production,
+                resulting in high blood sugar levels.</p>
+            </div>
+            <div class="disease-col">
+                <img src="img/heart.jpeg">
+                <h3>Heart Disease</h3>
+                <p>Excess fat can clog blood vessels,
+                leading to reduced blood flow to the heart and potential heart damage.</p>
+            </div>
+            <div class="disease-col">
+                <img src="img/stroke.jpg">
+                <h3>Stroke</h3>
+                <p>Fat buildup in brain blood vessels can block blood flow,
+                leading to oxygen deprivation and possible brain damage.</p>
+            </div>
+            <div class="disease-col">
+                <img src="img/highpressure.jpeg">
+                <h3>High Blood Pressure</h3>
+                <p>Being overweight often results in high blood pressure due to excessive fat in blood vessels,
+                which can strain the heart.</p>
+            </div>
+            <div class="disease-col">
+                <img src="img/cancer.jpg">
+                <h3>Cancer</h3>
+                <p>Obesity increases the risk of various cancers due to abnormal organ function from excess body fat.</p>
+            </div>
+        </div>
+    </section>
+
+    <!---- resource ---->
+
+    <section class="resource">
+        <h1></h1>
+
+
+    </section>
+
+
+
+
+    </section>
+
+
+
+
+
+</body>
+</html>
