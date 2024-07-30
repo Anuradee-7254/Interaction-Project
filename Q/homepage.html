@@ -13,12 +13,14 @@
 <body>
     <section class="header">
         <nav>
-            <a href="homepage.html" class="logo"><img src="img/logo1.png"></a>
+            <a href="homepage.html" class="logo"><img src="img/logo3.png"></a>
             <div class="nav-links">
                 <ul>
                     <li><a href="homepage.html">Home</a></li>
-                    <li><a href="resources.html">Resource</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Categorie</a></li>
+                    <li><a href="#">Disease</a></li>
+                    <li><a href="#">Management</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
                 <a href="#" class="user-icon"><img src="img/userblack-removebg-preview.png" alt="User Profile"></a>
             </div>
@@ -59,71 +61,44 @@
     <!---- RESULT ---->
 
     <section class="result">
-        <h1>RESULTS</h1>
-        <p>The value obtained from the calculation of BMI is used to categorize whether a person is.</p>
+        <h1>BMI CATEGORIE</h1>
+        <div class="line"></div>
+        <p>The value from the calculation of BMI is used to categorize what status the individual is in, and here are the different categories</p>
 
         <div class="row">
             <div class="result-col">
                 <img src="img/yellow.png">
-                <h3>Underweight</h3>
-                <p>Your BMI is below 18.5, indicating that you are underweight.
-                 It may be beneficial to consult with a healthcare provider to ensure
-                 you're meeting your nutritional needs.</p>
+                <div class="layer">
+                    <h3>Underweight</h3>
+                    <p>BMI <span class="highlight">less than 18.5</span>, indicates being underweight; consult a healthcare provider for nutritional guidance.</p>
+                </div>
             </div>
             <div class="result-col">
                 <img src="img/green.png">
-                <h3>Normal Weight</h3>
-                <p>Your BMI is between 18.5 and 24.9, which is considered a healthy weight range.
-                 Maintaining a balanced diet and regular physical activity is recommended for continued well-being.</p>
+                <div class="layer">
+                    <h3>Normal Weight</h3>
+                    <p>BMI between <span class="highlight">18.5 to 24.9</span>, considered healthy; maintain with a balanced diet and regular exercise.</p>
+                </div>
             </div>
             <div class="result-col">
                 <img src="img/orange.png">
-                <h3>Overweight</h3>
-                <p>Your BMI falls between 25 and 29.9, which is classified as overweight.
-                 Adopting a healthier diet and increasing physical activity can help manage your weight and reduce potential health risks.</p>
+                <div class="layer">
+                    <h3>Overweight</h3>
+                    <p>BMI between <span class="highlight">25 to 29.9</span>, indicates being overweight; improve diet and increase physical activity.</p>
+                </div>
             </div>
             <div class="result-col">
                 <img src="img/red.png">
-                <h3>Obesity</h3>
-                <p>Your BMI is 30 or above, placing you in the obesity category.
-                 It’s advisable to seek guidance from a healthcare professional to develop a plan for weight management and overall health improvement.</p>
-            </div>
-        </div>
-    </section>
-
-    <!---- management ---->
-
-    <section class="management">
-        <h1>HOW TO MANAGE WEIGHT</h1>
-        <p>To avoid the risk of various illnesses, we need to maintain our health and keep our weight within a suitable range.
-            Effective weight management is actually not as difficult as it seems. It involves controlling your diet and engaging in regular exercise.</p>
-
-        <div class="manage-row">
-            <div class="food-row">
-                <div class="food-col">
-                    <img src="img/food_692x461.jpeg">
-                </div>
-                <div class="foodparagraph-col">
-                    <h3>FOOD</h3>
-                    <p>Managing your diet isn’t about depriving yourself but about consuming a well-balanced diet with appropriate portions from all five food groups.
-                     For instance, women who are active in their work should aim for 1,200-1,600 calories a day, while men should target 1,800-2,000 calories,
-                     depending on their level of physical activity.<br><br>
-                     It's also important to focus on the quality of your food. Choose nutrient-rich foods like vegetables, fruits, whole grains, and high-quality proteins,
-                     and avoid those high in sugar, fats, and processed ingredients to reduce the risk of chronic diseases.<br><br></p>
+                <div class="layer">
+                    <h3>Obesity</h3>
+                    <p>BMI between <span class="highlight">30 to 34.9</span>, indicates obesity; seek professional guidance for weight management.</p>
                 </div>
             </div>
-
-            <div class="exercise-row">
-                <div class="exerciseparagraph-col">
-                    <h3>EXERCISE</h3>
-                    <p>Pairing a balanced diet with regular exercise is essential for maintaining weight and promoting overall health.
-                     Exercise helps burn excess calories, rebuild lost muscle mass, and supports long-term wellness. It also enhances cardiovascular health, mood, and energy levels,
-                     and can prevent chronic diseases like diabetes and heart disease.<br><br>
-                     A good exercise routine should include activity three times a week, with sessions lasting 20-60 minutes.
-                     Beginners, especially those who are significantly overweight, should start with lighter activities and consider seeking guidance from a healthcare professional or certified trainer for personalized advice.</p>
-                </div>
-                <div class="exercise-col">
-                    <img src="img/gym3_800x533.jpeg">
+            <div class="result-col">
+                <img src="img/superred.png">
+                <div class="layer">
+                    <h3>Overobesity</h3>
+                    <p>BMI <span class="highlight">more than 35</span>, indicates severe obesity; requires immediate medical consultation for a comprehensive plan.</p>
                 </div>
             </div>
         </div>
@@ -132,7 +107,8 @@
     <!---- disease ---->
 
     <section class="disease">
-        <h1>DISEASE</h1>
+        <h1>DISEASES</h1>
+        <div class="line"></div>
         <p>Being overweight or obese can lead to various negative consequences.</p>
 
         <div class="row">
@@ -168,12 +144,58 @@
         </div>
     </section>
 
-    <!---- resource ---->
+    <!---- management ---->
 
-    <section class="resource">
-        <h1></h1>
+    <section class="management">
+        <h1>HOW TO MANAGE WEIGHT</h1>
+        <div class="line"></div>
+        <p>To avoid the risk of various illnesses, we need to maintain our health and keep our weight within a suitable range.
+            Effective weight management is actually not as difficult as it seems. It involves controlling your diet and engaging in regular exercise.</p>
 
+        <div class="manage-row">
+            <div class="food-row">
+                <div class="food-col">
+                    <img src="img/food_692x461.jpeg">
+                </div>
+                <div class="foodparagraph-col">
+                    <h3>FOOD</h3>
+                    <p>Managing your diet isn’t about depriving yourself but about consuming a well-balanced diet with appropriate portions from all five food groups.
+                     For instance, women who are active in their work should aim for 1,200-1,600 calories a day, while men should target 1,800-2,000 calories,
+                     depending on their level of physical activity.<br><br>
+                     It's also important to focus on the quality of your food. Choose nutrient-rich foods like vegetables, fruits, whole grains, and high-quality proteins,
+                     and avoid those high in sugar, fats, and processed ingredients to reduce the risk of chronic diseases.<br><br></p>
+                </div>
+            </div>
 
+            <div class="exercise-row">
+                <div class="exerciseparagraph-col">
+                    <h3>EXERCISE</h3>
+                    <p>Pairing a balanced diet with regular exercise is essential for maintaining weight and promoting overall health.
+                     Exercise helps burn excess calories, rebuild lost muscle mass, and supports long-term wellness. It also enhances cardiovascular health, mood, and energy levels,
+                     and can prevent chronic diseases like diabetes and heart disease.<br><br>
+                     A good exercise routine should include activity three times a week, with sessions lasting 20-60 minutes.
+                     Beginners, especially those who are significantly overweight, should start with lighter activities and consider seeking guidance from a healthcare professional or certified trainer for personalized advice.</p>
+                </div>
+                <div class="exercise-col">
+                    <img src="img/gym3_800x533.jpeg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---- contact ---->
+
+    <section class="contact">
+        <h1>Thank you for visiting our website!<br> We are excited to hear from you and answer any questions.</h1>
+        <a href="" class="email">CONTACT US</a>
+    </section>
+
+    <!---- footer ---->
+
+    <section class="footer">
+        <h4>About us</h4>
+        <p>KKU| Digital Media Engineering</p>
+        <p>Made with love by IAP24-06</p>
     </section>
 
 
