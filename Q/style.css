@@ -15,7 +15,7 @@
 
 nav {
     display: flex;
-    padding: 2% 6%;
+    padding: 2% 3%;
     justify-content: space-between;
     align-items: center;
 }
@@ -44,7 +44,7 @@ nav {
 
 .nav-links ul li {
     list-style: none;
-    padding: 8px 18px;
+    padding: 8px 15px;
     position: relative;
 }
 
@@ -81,7 +81,7 @@ nav {
     color: black;
     background-color: rgba(255, 255, 255, 0.3);
     padding: 20px;
-    border-radius: 30px;
+    border-radius: 10px;
     position: absolute;
     top: 55%;
     left: 32%;
@@ -120,7 +120,7 @@ nav {
     color: whitesmoke;
     background-color: rgba(255, 255, 255, 0.3); 
     padding: 20px;
-    border-radius: 30px;
+    border-radius: 10px;
     position: absolute;
     top: 55%;
     right: 8%;
@@ -227,7 +227,7 @@ p{
 }
 
 .result .result-col {
-    flex-basis: 20%;
+    flex-basis: 18.7%;
     background-color: #fff;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -245,7 +245,7 @@ p{
 
 .result .result-col:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.7);
 }
 
 .result .layer {

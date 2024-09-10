@@ -24,3 +24,5 @@ document.getElementById('bmiForm').addEventListener('submit', function(e) {
     
     document.getElementById('outcome').textContent = `Your BMI is ${bmi.toFixed(2)} (${category}).`;
 });
+
+
