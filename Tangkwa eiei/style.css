@@ -7,7 +7,7 @@
 .header {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.9),rgba(0, 0, 0, 0.3)),url(img/bmipic_1920x1280.jpeg);
+    background-image: linear-gradient(rgba(4,9,30,1),rgba(0, 0, 0, 0.5)),url(img/bmipic_1920x1280.jpeg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -15,17 +15,24 @@
 
 nav {
     display: flex;
-    padding: 2% 3%;
+    padding: 5px;
     justify-content: space-between;
     align-items: center;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo {
-    margin-left: 0px;
+    margin-left: 15px;
+    margin-top: 5px;
 }
 
 .logo img {
-    width: 75px;
+    width: 60px;
 }
 
 .nav-links {
@@ -184,11 +191,20 @@ nav {
 
 /*---- RESULT ----*/
 
+.square {
+    background-color: #fff;
+    border-radius: 30px;
+    margin: 150px 150px 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
 .result{
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 80px;
+    padding-bottom: 100px;
 }
 
 .line{
@@ -371,7 +387,7 @@ p{
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 130px;
+    padding-top: 150px;
 }
 
 .disease-col{

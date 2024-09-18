@@ -11,16 +11,16 @@
 </head>
 
 <body>
-    <section class="header">
+    <section class="header" id="home">
         <nav>
             <a href="homepage.html" class="logo"><img src="img/logo3.png"></a>
             <div class="nav-links">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Categorie</a></li>
-                    <li><a href="#">Disease</a></li>
-                    <li><a href="#">Management</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#result">Categorie</a></li>
+                    <li><a href="#disease">Disease</a></li>
+                    <li><a href="#management">Management</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <a href="#" class="user-icon"><img src="img/userblack-removebg-preview.png" alt="User Profile"></a>
             </div>
@@ -72,8 +72,8 @@
     </section>
 
     <!---- RESULT ---->
-
-    <section class="result">
+    <div class="square">
+    <section class="result" id="result">
         <h1>BMI CATEGORIES</h1>
         <div class="line"></div>
         <p>The value from the calculation of BMI is used to categorize what status the individual is in, and here are the different categories</p>
@@ -83,7 +83,7 @@
                 <img src="img/yellow.png">
                 <div class="layer">
                     <h3>Underweight</h3>
-                    <p>BMI <span class="highlight">less than 18.5</span>, indicates being underweight; consult a healthcare provider for nutritional guidance.</p>
+                    <p>BMI <span class="highlight">less than 18.5</span>, indicates being underweight; consult a provider for nutrition advice.</p>
                 </div>
             </div>
             <div class="result-col">
@@ -111,15 +111,16 @@
                 <img src="img/superred.png">
                 <div class="layer">
                     <h3>Overobesity</h3>
-                    <p>BMI <span class="highlight">more than 35</span>, indicates severe obesity; requires immediate medical consultation for a comprehensive plan.</p>
+                    <p>BMI <span class="highlight">more than 35</span>, indicates severe obesity; needs urgent medical consultation for a plan.</p>
                 </div>
             </div>
         </div>
     </section>
+    </div>
 
     <!---- disease ---->
 
-    <section class="disease">
+    <section class="disease" id="disease">
         <h1>DISEASES</h1>
         <div class="line"></div>
         <p>Being overweight or obese can lead to various negative consequences.</p>
@@ -159,7 +160,7 @@
 
     <!---- management ---->
 
-    <section class="management">
+    <section class="management" id="management">
         <h1>HOW TO MANAGE WEIGHT</h1>
         <div class="line"></div>
         <p>To avoid the risk of various illnesses, we need to maintain our health and keep our weight within a suitable range.
@@ -198,7 +199,7 @@
 
     <!---- contact ---->
 
-    <section class="contact">
+    <section class="contact" id="contact">
         <h1>Thank you for visiting our website!<br> We are excited to hear from you and answer any questions.</h1>
         <a href="" class="email">CONTACT US</a>
     </section>

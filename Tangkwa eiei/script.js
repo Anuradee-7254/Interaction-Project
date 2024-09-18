@@ -59,7 +59,7 @@ document.getElementById('bmiForm').addEventListener('submit', function(e) {
     }
     
     document.querySelector('.popup h1').textContent = `Your BMI is ${bmi.toFixed(2)}`;
-    document.querySelector('.popup h2').textContent = `You are in the ${category}.`;
+    document.querySelector('.popup h2').textContent = `${category}`;
     document.querySelector('.popup p').textContent = `${message}`;
     document.querySelector('.popup h3').textContent = `${diet_recommend}`;
     document.querySelector('.popup h4').textContent = `${ex_recommend}`;
