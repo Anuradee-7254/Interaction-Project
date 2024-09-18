@@ -7,7 +7,7 @@
 .header {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,1),rgba(0, 0, 0, 0.5)),url(img/bmipic_1920x1280.jpeg);
+    background-image: linear-gradient(rgba(4,9,30,1),rgba(0, 0, 0, 0.6)),url(img/bmipic_1920x1280.jpeg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -114,12 +114,13 @@ nav {
 }
 
 .text-box p {
-    color: whitesmoke;
+    color: rgb(255, 255, 255);
     line-height: 1.5;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 23px;
+    padding-right: 26px;
     padding-bottom: 20px;
     margin-top: -90px;
+    font-weight: 400;
 }
 
 .container {
