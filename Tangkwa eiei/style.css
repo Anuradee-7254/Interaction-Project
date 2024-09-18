@@ -521,3 +521,8 @@ p{
 .popup button:hover{
     cursor: pointer;
 }
+.popup img {
+    width: 100px;
+    height: auto; 
+    margin: 5px; 
+}
