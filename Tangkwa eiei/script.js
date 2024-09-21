@@ -23,9 +23,9 @@ document.getElementById('bmiForm').addEventListener('submit', function(e) {
     if (bmi < 18.5) {
         category = 'Underweight';
         message = 'Increased risk of malnutrition, weakened immune system, bone density loss, and fertility issues.';
-        diet_recommend = 'Diet: Focus on nutrient-dense, high-calorie foods such as nuts, avocados, whole grains, and lean proteins. Consider consulting a dietitian for a personalized plan.';
-        ex_recommend = 'Exercise: Incorporate strength training exercises to build muscle mass, but ensure a balanced approach to avoid excessive calorie expenditure.';
-        food = `<img src="img/Cheese.jpg" alt="cheese" />
+        diet_recommend = 'Diet: Focus on calorie-dense foods like avocados, nuts, and healthy oils, along with high-quality proteins such as meat, fish, and dairy.';
+        ex_recommend = 'Exercise: Focus on programs that increase muscle mass. Weight training like dumbbells or barbells.';
+        food = `<img src="img/Avocado.jpg" alt="avocado" />
             <img src="img/milk.jpg" alt="milk" />
             <img src="img/meat.jpg" alt="meat" />`;
         foodDescription = `<p>These foods provide essential nutrients and calories to help gain weight healthily.</p>`;
@@ -43,7 +43,7 @@ document.getElementById('bmiForm').addEventListener('submit', function(e) {
         message = 'Higher risk of cardiovascular diseases, type 2 diabetes, high blood pressure, and certain cancers.';
         diet_recommend = 'Diet: Emphasize a balanced diet with a focus on whole, unprocessed foods. Reduce intake of sugary and high-fat foods. Consider portion control and mindful eating practices.';
         ex_recommend = 'Exercise: Aim for at least 150 minutes of moderate aerobic activity per week, combined with strength training exercises. Incorporate activities you enjoy to increase adherence.';
-        food = `<img src="img/Fish_Meat.jpg" alt="fish" />
+        food = `<img src="img/Grilled_fish.jpg" alt="grilled-fish" />
             <img src="img/Vegetables.jpg" alt="vegetables" />
             <img src="img/Tofu.jpg" alt="tofu" />`;
         foodDescription = `<p>These foods can help manage weight while providing necessary nutrients.</p>`;
@@ -58,9 +58,9 @@ document.getElementById('bmiForm').addEventListener('submit', function(e) {
         foodDescription = `<p>These foods should be part of a calorie-controlled eating plan.</p>`;
     } else if (bmi >= 35) {
         category = 'Overobesity';
-        message = '';
-        diet_recommend = '';
-        ex_recommend = '';
+        message = 'Higher risk of Cardiovascular Disease, High Cholesterol, Fatty Liver Disease and type 2 diabetes';
+        diet_recommend = 'Focus on Nutrient-Dense Foods: Choose fresh fruits, vegetables, whole grains, and lean proteins (like fish, chicken, eggs, and legumes) and Limit Processed Foods';
+        ex_recommend = 'Low-intensity cardio: Such as slow walking, swimming, or light cycling, starting from 10-15 minutes a day and gradually increasing time';
         food = `<img src="img/Green_Leafy_Vegetable.jpg" alt="green-vegy" />
         <img src="img/Apple.jpg" alt="apple" />
         <img src="img/Tofu.jpg" alt="tofu" />`;
