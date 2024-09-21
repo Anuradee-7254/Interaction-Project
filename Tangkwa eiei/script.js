@@ -25,7 +25,7 @@ document.getElementById('bmiForm').addEventListener('submit', function(e) {
         message = 'Increased risk of malnutrition, weakened immune system, bone density loss, and fertility issues.';
         diet_recommend = 'Diet: Focus on nutrient-dense, high-calorie foods such as nuts, avocados, whole grains, and lean proteins. Consider consulting a dietitian for a personalized plan.';
         ex_recommend = 'Exercise: Incorporate strength training exercises to build muscle mass, but ensure a balanced approach to avoid excessive calorie expenditure.';
-        food = `<img src="img/grains.jpg" alt="grains" />
+        food = `<img src="img/Cheese.jpg" alt="cheese" />
             <img src="img/milk.jpg" alt="milk" />
             <img src="img/meat.jpg" alt="meat" />`;
         foodDescription = `<p>These foods provide essential nutrients and calories to help gain weight healthily.</p>`;
@@ -34,27 +34,36 @@ document.getElementById('bmiForm').addEventListener('submit', function(e) {
         message = 'Generally considered to be at a lower risk for weight-related health issues, but overall health should still be monitored.';
         diet_recommend = 'Diet: Maintain a balanced diet rich in fruits, vegetables, lean proteins, and whole grains. Monitor portion sizes and overall caloric intake to stay within a healthy range.';
         ex_recommend = 'Exercise: Engage in regular physical activity, including a mix of aerobic exercises (like walking or cycling) and strength training (like weight lifting) to promote overall health and fitness.';
-        food = `<img src="img/grains.jpg" alt="grains" />
-            <img src="img/milk.jpg" alt="milk" />
-            <img src="img/meat.jpg" alt="meat" />`;
+        food = `<img src="img/Fruits.jpg" alt="fruits" />
+            <img src="img/Fish_Meat.jpg" alt="fish" />
+            <img src="img/WholeWheat_Bread.jpg" alt="whole-wheat-bread" />`;
         foodDescription = `<p>These foods are part of a balanced diet that supports overall health.</p>`;
     } else if (bmi >= 25 && bmi < 29.9) {
         category = 'Overweight';
         message = 'Higher risk of cardiovascular diseases, type 2 diabetes, high blood pressure, and certain cancers.';
         diet_recommend = 'Diet: Emphasize a balanced diet with a focus on whole, unprocessed foods. Reduce intake of sugary and high-fat foods. Consider portion control and mindful eating practices.';
         ex_recommend = 'Exercise: Aim for at least 150 minutes of moderate aerobic activity per week, combined with strength training exercises. Incorporate activities you enjoy to increase adherence.';
-        food = `<img src="img/grains.jpg" alt="grains" />
-            <img src="img/milk.jpg" alt="milk" />
-            <img src="img/meat.jpg" alt="meat" />`;
+        food = `<img src="img/Fish_Meat.jpg" alt="fish" />
+            <img src="img/Vegetables.jpg" alt="vegetables" />
+            <img src="img/Tofu.jpg" alt="tofu" />`;
         foodDescription = `<p>These foods can help manage weight while providing necessary nutrients.</p>`;
-    } else if (bmi >= 30) {
+    } else if (bmi >= 30 && bmi < 35) {
         category = 'Obesity';
         message = 'Elevated risk of serious health conditions including heart disease, stroke, type 2 diabetes, certain types of cancer, sleep apnea, and osteoarthritis.';
         diet_recommend = 'Diet: Work with a healthcare provider to create a structured, sustainable eating plan. Focus on reducing calorie intake while ensuring nutritional adequacy.';
         ex_recommend = 'Exercise: Gradually increase physical activity levels, aiming for at least 150 minutes of moderate aerobic exercise per week. Include strength training and consult with a fitness professional for personalized guidance.';
-        food = `<img src="img/grains.jpg" alt="grains" />
-            <img src="img/milk.jpg" alt="milk" />
-            <img src="img/meat.jpg" alt="meat" />`;
+        food = `<img src="img/Beans.jpg" alt="beans" />
+            <img src="img/Vegetables.jpg" alt="vegetables" />
+            <img src="img/Lean_chicken_meat.jpg" alt="lean-chicken" />`;
+        foodDescription = `<p>These foods should be part of a calorie-controlled eating plan.</p>`;
+    } else if (bmi >= 35) {
+        category = 'Overobesity';
+        message = '';
+        diet_recommend = '';
+        ex_recommend = '';
+        food = `<img src="img/Green_Leafy_Vegetable.jpg" alt="green-vegy" />
+        <img src="img/Apple.jpg" alt="apple" />
+        <img src="img/Tofu.jpg" alt="tofu" />`;
         foodDescription = `<p>These foods should be part of a calorie-controlled eating plan.</p>`;
     }
     
