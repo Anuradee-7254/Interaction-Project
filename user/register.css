@@ -50,7 +50,7 @@ nav {
 }
 
 .wrapper {
-    width: 500px;
+    width: 420px;
     background: #2b2b2b;
     border-radius: 30px;
     color: whitesmoke;
@@ -66,9 +66,10 @@ nav {
 }
 
 .wrapper .input-box {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin: 20px 0;
 }
 
 .input-box .input-field {

@@ -50,7 +50,7 @@ nav {
 }
 
 .wrapper {
-    width: 420px;
+    width: 410px;
     background: #2b2b2b;
     color: whitesmoke;
     border-radius: 30px;
@@ -67,7 +67,7 @@ nav {
     position: relative;
     width: 100%;
     height: 50px;
-    margin: 30px 0;
+    margin: 15px 0;
 }
 
 .input-box input {
@@ -95,27 +95,6 @@ nav {
     font-size: 20px;
 }
 
-.wrapper .remember-forgot {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px;
-}
-
-.remember-forgot label input {
-    accent-color: whitesmoke;
-    margin-right: 3px;
-}
-
-.remember-forgot a {
-    color: whitesmoke;
-    text-decoration: none;
-}
-
-.remember-forgot a:hover {
-    text-decoration: underline;
-}
-
 .wrapper .btn {
     width: 100%;
     height: 45px;
@@ -128,6 +107,7 @@ nav {
     color: #2b2b2b;
     font-weight: 600;
     margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .wrapper .register-link {
