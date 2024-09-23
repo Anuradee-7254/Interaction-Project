@@ -213,7 +213,7 @@ nav {
 .line{
     width: 150px; 
     height: 4px; 
-    background: #453834; 
+    background: #000000; 
     margin: 10px auto; 
     border-radius: 5px;
 }
@@ -221,11 +221,11 @@ nav {
 h1{
     font-size: 50px;
     font-weight: 600;
-    color: #453934;
+    color: #000000;
 }
 
 p{
-    color: #80716c;
+    color: #6f6f6f;
     font-size: 14px;
     font-weight: 300;
     line-height: 22px;
@@ -374,12 +374,12 @@ p{
 .manage-row h3{
     font-size: 45px;
     font-weight: 600;
-    color: #453934;
+    color: #000000;
 }
 
 .manage-row p{
     text-align: left;
-    color: #80716c;
+    color: #6f6f6f;
 }
 
 
@@ -499,7 +499,7 @@ p{
     transform: translate(-50%, -50%) scale(0.1);
     text-align: center;
     padding: 5px 25px;
-    color: #333;
+    color: #000000;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
 }
