@@ -18,10 +18,10 @@
             <div class="nav-links">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#result">Categorie</a></li>
+                    <li><a href="#result" data-scroll-padding="170">Categorie</a></li>
+                    <li><a href="#management" data-scroll-padding="38">Management</a></li>
                     <li><a href="#disease">Disease</a></li>
-                    <li><a href="#management">Management</a></li>
-                    <li><a href="#contact">More</a></li>
+                    <li><a href="#contact" data-scroll-padding="100">More</a></li>
                 </ul>
                 <a href="#" class="user-icon"><img src="img/userblack-removebg-preview.png" alt="User Profile"></a>
             </div>
@@ -45,11 +45,11 @@
         <form id="bmiForm">
             <div class="input-group">
                 <label for="height">Enter height</label>
-                <input type="number" id="height" placeholder="meters" step="0.01" required>
+                <input type="number" id="height" placeholder="meters" step="0.1" required>
             </div>
             <div class="input-group">
                 <label for="weight">Enter weight</label>
-                <input type="number" id="weight" placeholder="kilograms" step="0.01" required>
+                <input type="number" id="weight" placeholder="kilograms" step="0.1" required>
             </div>
             <button type="submit" class="calculate" onclick="openPopup()">Calculate BMI</button>
             <div class="popup" id="popup">
@@ -118,6 +118,45 @@
     </section>
     </div>
 
+     <!---- management ---->
+
+     <section class="management" id="management">
+        <h1>HOW TO MANAGE WEIGHT</h1>
+        <div class="line"></div>
+        <p>To avoid the risk of various illnesses, we need to maintain our health and keep our weight within a suitable range.
+            Effective weight management is actually not as difficult as it seems. It involves controlling your diet and engaging in regular exercise.</p>
+
+        <div class="manage-row">
+            <div class="food-row">
+                <div class="food-col">
+                    <img src="img/food_692x461.jpeg">
+                </div>
+                <div class="foodparagraph-col">
+                    <h3>FOOD</h3>
+                    <p>Managing your diet isn’t about depriving yourself but about consuming a well-balanced diet with appropriate portions from all five food groups.
+                     For instance, women who are active in their work should aim for 1,200-1,600 calories a day, while men should target 1,800-2,000 calories,
+                     depending on their level of physical activity.<br><br>
+                     It's also important to focus on the quality of your food. Choose nutrient-rich foods like vegetables, fruits, whole grains, and high-quality proteins,
+                     and avoid those high in sugar, fats, and processed ingredients to reduce the risk of chronic diseases.<br><br></p>
+                </div>
+            </div>
+
+            <div class="exercise-row">
+                <div class="exerciseparagraph-col">
+                    <h3>EXERCISE</h3>
+                    <p>Pairing a balanced diet with regular exercise is essential for maintaining weight and promoting overall health.
+                     Exercise helps burn excess calories, rebuild lost muscle mass, and supports long-term wellness. It also enhances cardiovascular health, mood, and energy levels,
+                     and can prevent chronic diseases like diabetes and heart disease.<br><br>
+                     A good exercise routine should include activity three times a week, with sessions lasting 20-60 minutes.
+                     Beginners, especially those who are significantly overweight, should start with lighter activities and consider seeking guidance from a healthcare professional or certified trainer for personalized advice.</p>
+                </div>
+                <div class="exercise-col">
+                    <img src="img/gym3_800x533.jpeg">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!---- disease ---->
 
     <section class="disease" id="disease">
@@ -154,45 +193,6 @@
                 <img src="img/cancer.jpg">
                 <h3>Cancer</h3>
                 <p>Obesity increases the risk of various cancers due to abnormal organ function from excess body fat.</p>
-            </div>
-        </div>
-    </section>
-
-    <!---- management ---->
-
-    <section class="management" id="management">
-        <h1>HOW TO MANAGE WEIGHT</h1>
-        <div class="line"></div>
-        <p>To avoid the risk of various illnesses, we need to maintain our health and keep our weight within a suitable range.
-            Effective weight management is actually not as difficult as it seems. It involves controlling your diet and engaging in regular exercise.</p>
-
-        <div class="manage-row">
-            <div class="food-row">
-                <div class="food-col">
-                    <img src="img/food_692x461.jpeg">
-                </div>
-                <div class="foodparagraph-col">
-                    <h3>FOOD</h3>
-                    <p>Managing your diet isn’t about depriving yourself but about consuming a well-balanced diet with appropriate portions from all five food groups.
-                     For instance, women who are active in their work should aim for 1,200-1,600 calories a day, while men should target 1,800-2,000 calories,
-                     depending on their level of physical activity.<br><br>
-                     It's also important to focus on the quality of your food. Choose nutrient-rich foods like vegetables, fruits, whole grains, and high-quality proteins,
-                     and avoid those high in sugar, fats, and processed ingredients to reduce the risk of chronic diseases.<br><br></p>
-                </div>
-            </div>
-
-            <div class="exercise-row">
-                <div class="exerciseparagraph-col">
-                    <h3>EXERCISE</h3>
-                    <p>Pairing a balanced diet with regular exercise is essential for maintaining weight and promoting overall health.
-                     Exercise helps burn excess calories, rebuild lost muscle mass, and supports long-term wellness. It also enhances cardiovascular health, mood, and energy levels,
-                     and can prevent chronic diseases like diabetes and heart disease.<br><br>
-                     A good exercise routine should include activity three times a week, with sessions lasting 20-60 minutes.
-                     Beginners, especially those who are significantly overweight, should start with lighter activities and consider seeking guidance from a healthcare professional or certified trainer for personalized advice.</p>
-                </div>
-                <div class="exercise-col">
-                    <img src="img/gym3_800x533.jpeg">
-                </div>
             </div>
         </div>
     </section>

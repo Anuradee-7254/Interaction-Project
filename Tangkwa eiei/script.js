@@ -85,3 +85,22 @@ function openPopup() {
 function closePopup() {
     document.getElementById("popup").classList.remove("open-popup");
 }
+
+
+//manage scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        const scrollPadding = parseInt(this.getAttribute('data-scroll-padding') || '0', 10);
+        
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - scrollPadding;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    });
+});

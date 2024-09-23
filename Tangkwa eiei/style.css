@@ -76,11 +76,13 @@ nav {
 }
 
 .user-icon {
-    margin-left: 20px;
+    margin: 15px;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .user-icon img {
-    width: 50px;
+    width: 40px;
 }
 
 .text-box {
@@ -389,6 +391,7 @@ p{
     margin: auto;
     text-align: center;
     padding-top: 150px;
+    padding-bottom: 80px;
 }
 
 .disease-col{
@@ -462,7 +465,7 @@ p{
 .footer{
     width: 100%;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     background-color: #000000;
 }
 
