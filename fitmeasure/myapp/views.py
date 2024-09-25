@@ -48,8 +48,8 @@ def user_login(request):
                 login(request, user)
                 return redirect('homepage')
             else:
-                messages.error(request, 'Invalid username or password')
+                messages.error(request, 'Invalid user')
         else:
-            messages.error(request, 'Invalid credentials')
+            messages.error(request, 'Invalid username or password')
     form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
