@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitMeasure</title>
+    <link rel="stylesheet" href="style สำเนา.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="header" id="home">
+        <nav>
+            <a href="homepage.html" class="logo"><img src="img/logo3.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#result" data-scroll-padding="170">Categorie</a></li>
+                    <li><a href="#management" data-scroll-padding="38">Management</a></li>
+                    <li><a href="#disease">Disease</a></li>
+                    <li><a href="#contact" data-scroll-padding="100">More</a></li>
+                </ul>
+                <a href="#" class="user-icon" id="user-icon"><img src="img/userblack-removebg-preview.png" alt="User Profile"></a>
+                
+                <!-- Modal Structure -->
+                <div id="user-modal" class="modal hidden">
+                    <div class="modal-content">
+                        <h1>BMI Calculation Records</h1>
+                        <div class="dashboard">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>BMI</th>
+                                        <th>Weight (kilograms)</th>
+                                        <th>Height (meters)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="history">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <script>
+                    document.getElementById('user-icon').addEventListener('click', function(event) {
+                        event.preventDefault(); // Prevent page refresh
+                        const modal = document.getElementById('user-modal');
+                        modal.classList.toggle('hidden'); // Toggle the modal visibility
+                    });
+
+                    // Close the modal when the user clicks outside of the modal content
+                    window.addEventListener('click', function(event) {
+                        const modal = document.getElementById('user-modal');
+                        if (event.target === modal) {
+                            modal.classList.add('hidden'); // Hide the modal
+                        }
+                    });
+
+                </script>
+
+            </div>
+        </nav>
+        
+    <div class="container">
+        <h1>BMI calculator</h1>
+        <form id="bmiForm">
+            <div class="input-group">
+                <label for="height">Enter height</label>
+                <input type="number" id="height" placeholder="meters" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="weight">Enter weight</label>
+                <input type="number" id="weight" placeholder="kilograms" step="0.01" required>
+            </div>
+            <button type="submit" class="calculate" onclick="openPopup()">Calculate BMI</button>
+            <div class="popup" id="popup">
+                <h1>No value</h1>
+                <h2> <span class="highlight">Please enter your height and your weight</span></h2>
+                <p></p>
+                <h3></h3>
+                <h4></h4>
+                <h5></h5>
+                <div class="food-description" id="food-description"></div>
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+                       
+        </form>
+        <div id="outcome"></div>
+    </div>
+
+
+    <script src="script.js"></script>
+    </section>
+
+    <!---- RESULT ---->
+    <div class="square">
+    <section class="result" id="result">
+        <h1>BMI CATEGORIES</h1>
+        <div class="line"></div>
+        <p>The value from the calculation of BMI is used to categorize what status the individual is in, and here are the different categories</p>
+
+        <div class="row">
+            <div class="result-col">
+                <img src="img/yellow.png">
+                <div class="layer">
+                    <h3>Underweight</h3>
+                    <p>BMI <span class="highlight">less than 18.5</span>, indicates being underweight; consult a provider for nutrition advice.</p>
+                </div>
+            </div>
+            <div class="result-col">
+                <img src="img/green.png">
+                <div class="layer">
+                    <h3>Normal Weight</h3>
+                    <p>BMI between <span class="highlight">18.5 to 24.9</span>, considered healthy; maintain with a balanced diet and regular exercise.</p>
+                </div>
+            </div>
+            <div class="result-col">
+                <img src="img/orange.png">
+                <div class="layer">
+                    <h3>Overweight</h3>
+                    <p>BMI between <span class="highlight">25 to 29.9</span>, indicates being overweight; improve diet and increase physical activity.</p>
+                </div>
+            </div>
+            <div class="result-col">
+                <img src="img/red.png">
+                <div class="layer">
+                    <h3>Obesity</h3>
+                    <p>BMI between <span class="highlight">30 to 34.9</span>, indicates obesity; seek professional guidance for weight management.</p>
+                </div>
+            </div>
+            <div class="result-col">
+                <img src="img/superred.png">
+                <div class="layer">
+                    <h3>Overobesity</h3>
+                    <p>BMI <span class="highlight">more than 35</span>, indicates severe obesity; needs urgent medical consultation for a plan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+     <!---- management ---->
+
+     <section class="management" id="management">
+        <h1>HOW TO MANAGE WEIGHT</h1>
+        <div class="line"></div>
+        <p>To avoid the risk of various illnesses, we need to maintain our health and keep our weight within a suitable range.
+            Effective weight management is actually not as difficult as it seems. It involves controlling your diet and engaging in regular exercise.</p>
+
+        <div class="manage-row">
+            <div class="food-row">
+                <div class="food-col">
+                    <img src="img/food_692x461.jpeg">
+                </div>
+                <div class="box">
+                    <h3>FOOD</h3>
+                <div class="foodparagraph-col">
+                    <p>Active women should aim for <span class="highlight">1,200-1,600 calories</span> daily, while men should target <span class="highlight">1,800-2,000 calories</span>. Focus on nutrient-rich foods like vegetables, fruits, whole grains, and proteins, and limit sugar, fats, and processed foods to stay healthy.</p>
+                    <img class="inside-pic" src="img/pyramid.jpg">
+                </div>
+                </div>
+            </div>
+
+            <div class="exercise-row">
+                <div class="exerciseparagraph-col">
+                    <h3>EXERCISE</h3>
+                    <p>Combining a balanced diet with regular exercise is key to maintaining weight and overall health. Exercise burns calories, builds muscle, and boosts heart health, mood, and energy while preventing diseases. <span class="highlight">Aim for 20-60 minutes of activity, three times a week</span>. Beginners should start light and seek professional advice if needed.</p>
+                    <i class='bx bx-dumbbell' ></i>
+                    <i class='bx bx-cycling'></i>
+                    <i class='bx bx-run' ></i>
+                    <i class='bx bx-swim' ></i>
+                </div>
+                <div class="exercise-col">
+                    <img src="img/gym3_800x533.jpeg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---- disease ---->
+
+    <section class="disease" id="disease">
+        <h1>DISEASES</h1>
+        <div class="line"></div>
+        <p>Being overweight or obese can lead to various negative consequences.</p>
+
+        <div class="row">
+            <div class="disease-col">
+                <img src="img/fat.jpeg">
+                <h3>Diabetes</h3>
+                <p>Obesity can lead to diabetes by causing ineffective insulin production,
+                resulting in high blood sugar levels.</p>
+            </div>
+            <div class="disease-col">
+                <img src="img/heart.jpeg">
+                <h3>Heart Disease</h3>
+                <p>Excess fat can clog blood vessels,
+                leading to reduced blood flow to the heart and potential heart damage.</p>
+            </div>
+            <div class="disease-col">
+                <img src="img/stroke.jpg">
+                <h3>Stroke</h3>
+                <p>Fat buildup in brain blood vessels can block blood flow,
+                leading to oxygen deprivation and possible brain damage.</p>
+            </div>
+            <div class="disease-col">
+                <img src="img/highpressure.jpeg">
+                <h3>High Blood Pressure</h3>
+                <p>Being overweight often results in high blood pressure due to excessive fat in blood vessels,
+                which can strain the heart.</p>
+            </div>
+            <div class="disease-col">
+                <img src="img/cancer.jpg">
+                <h3>Cancer</h3>
+                <p>Obesity increases the risk of various cancers due to abnormal organ function from excess body fat.</p>
+            </div>
+        </div>
+    </section>
+
+    <!---- contact ---->
+
+    <section class="contact" id="contact">
+        <h1>For detailed information about specific health conditions,<br>click the button below to explore trusted resources</h1>
+        <a href="https://www.bangkokhospital.com/health-info/disease-treatment" target="_blank" rel="noopener noreferrer" class="info">CLICK ME!</a>
+    </section>
+
+    <!---- footer ---->
+
+    <section class="footer">
+        <h4>About us</h4>
+        <p>KKU| Digital Media Engineering</p>
+        <p>Made with <i class='bx bx-heart'></i> by IAP24-06</p>
+    </section>
+
+
+    </section>
+
+</body>
+</html>

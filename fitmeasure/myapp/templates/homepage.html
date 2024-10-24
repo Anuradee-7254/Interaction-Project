@@ -15,42 +15,76 @@
 <body>
     <section class="header" id="home">
         <nav>
-            <a href="homepage.html" class="logo"><img src="{% static 'img/logo3.png' %}"></a>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#result" data-scroll-padding="170">Categorie</a></li>
-                    <li><a href="#management" data-scroll-padding="38">Management</a></li>
-                    <li><a href="#disease">Disease</a></li>
-                    <li><a href="#contact" data-scroll-padding="100">More</a></li>
-                </ul>
-                <a href="#" class="user-icon"><img src="{% static 'img/userblack-removebg-preview.png' %}" alt="User Profile"></a>
+                <a href="homepage.html" class="logo"><img src="{% static 'img/logo3.png' %}"></a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#result" data-scroll-padding="170">Categorie</a></li>
+                        <li><a href="#management" data-scroll-padding="38">Management</a></li>
+                        <li><a href="#disease">Disease</a></li>
+                        <li><a href="#contact" data-scroll-padding="100">More</a></li>
+                    </ul>
+                    <a href="#" class="user-icon" id="user-icon"><img src="{% static 'img/userblack-removebg-preview.png' %}" alt="User Profile"></a>
+
+                <!-- dashboard -->
+                <div id="user-modal" class="modal hidden">
+                    <div class="modal-content">
+                        <h1>BMI Calculation Records</h1>
+                        <div class="dashboard">
+                            <table class="table">
+                                <thead class="table-header">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>BMI</th>
+                                        <th>Weight(kg)</th>
+                                        <th>Height(m)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for record in bmi_records %}
+                                    <tr>
+                                        <td>{{ record.date|date:"d/m/Y" }}</td>
+                                        <td>{{ record.bmi|floatformat:2 }}</td>
+                                        <td>{{ record.weight }}</td>
+                                        <td>{{ record.height }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    document.getElementById('user-icon').addEventListener('click', function(event) {
+                        event.preventDefault(); // Prevent page refresh
+                        const modal = document.getElementById('user-modal');
+                        modal.classList.toggle('hidden'); // Toggle the modal visibility
+                    });
+
+                    // Close the modal when the user clicks outside of the modal content
+                    window.addEventListener('click', function(event) {
+                        const modal = document.getElementById('user-modal');
+                        if (event.target === modal) {
+                            modal.classList.add('hidden'); // Hide the modal
+                        }
+                    });
+
+                </script>
+
             </div>
         </nav>
 
-    <div class="text-box">
-        <h1>WHAT IS <span class="highlight">BMI?</span></h1>
-        <p>Body Mass Index (BMI) is a numerical value derived from an individual's weight and height.
-           It is used as a simple and quick screening tool to categorize people into different weight categories,
-           which can indicate potential health risks associated with being underweight, normal weight, overweight, or obese.
-           While BMI is a useful tool and can give a general indication of whether an individual has a healthy body weight,
-           it does have limitations. BMI does not directly measure body fat, and it does not take into account factors such as muscle mass, bone density,
-           overall body composition, and racial and sex differences.<br>
-           <br>It's important to use BMI along with other health assessments and indicators for a complete evaluation of an individual's health.
-           Consulting healthcare professionals for personalized advice is recommended.
-        </p>
-    </div>
-    
     <div class="container">
         <h1>BMI calculator</h1>
         <form id="bmiForm">
             <div class="input-group">
                 <label for="height">Enter height</label>
-                <input type="number" id="height" placeholder="meters" step="0.1" required>
+                <input type="number" id="height" placeholder="meters" step="0.01" required>
             </div>
             <div class="input-group">
                 <label for="weight">Enter weight</label>
-                <input type="number" id="weight" placeholder="kilograms" step="0.1" required>
+                <input type="number" id="weight" placeholder="kilograms" step="0.01" required>
             </div>
             <button type="submit" class="calculate" onclick="openPopup()">Calculate BMI</button>
             <div class="popup" id="popup">
@@ -98,6 +132,72 @@
 
             const heightInMeters = height;
             const bmi = weight / (heightInMeters * heightInMeters);
+
+            // ส่งข้อมูลไปบันทึก
+            fetch('/save-bmi/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')  // ฟังก์ชันสำหรับดึง CSRF token
+                },
+                body: JSON.stringify({
+                    bmi: bmi,
+                    weight: weight,
+                    height: height
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    updateDashboard();  // อัพเดตข้อมูลใน dashboard
+                }
+            });
+
+            // ฟังก์ชันสำหรับดึง CSRF token
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            // ฟังก์ชันสำหรับอัพเดต dashboard
+            function updateDashboard() {
+                fetch('/get-bmi-records/')  // endpoint สำหรับดึงข้อมูล
+                    .then(response => response.json())
+                    .then(records => {
+                        const tbody = document.querySelector('#user-modal table tbody');
+                        tbody.innerHTML = '';
+                        records.forEach(record => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${new Date(record.date).toLocaleDateString()}</td>
+                                <td>${record.bmi.toFixed(2)}</td>
+                                <td>${record.weight}</td>
+                                <td>${record.height}</td>
+                            `;
+                            tbody.appendChild(row);
+                        });
+                    });
+            }
+
+            // เรียกฟังก์ชันเมื่อเปิด modal
+            document.getElementById('user-icon').addEventListener('click', function(event) {
+                event.preventDefault();
+                updateDashboard();
+                const modal = document.getElementById('user-modal');
+                modal.classList.toggle('hidden');
+            });
+
+
 
             let category = '';
             let message = '';
@@ -205,7 +305,7 @@
     <section class="result" id="result">
         <h1>BMI CATEGORIES</h1>
         <div class="line"></div>
-        <p>The value from the calculation of BMI is used to categorize what status the individual is in, and here are the different categories</p>
+        <p>BMI should be used with other health assessments, and consulting a healthcare professional for personalized advice is advised.<br>Values are used to categorize an individual's weight status into the following categories.</p>
 
         <div class="row">
             <div class="result-col">
@@ -260,24 +360,23 @@
                 <div class="food-col">
                     <img src="{% static 'img/food_692x461.jpeg' %}">
                 </div>
-                <div class="foodparagraph-col">
+                <div class="box">
                     <h3>FOOD</h3>
-                    <p>Managing your diet isn’t about depriving yourself but about consuming a well-balanced diet with appropriate portions from all five food groups.
-                     For instance, women who are active in their work should aim for 1,200-1,600 calories a day, while men should target 1,800-2,000 calories,
-                     depending on their level of physical activity.<br><br>
-                     It's also important to focus on the quality of your food. Choose nutrient-rich foods like vegetables, fruits, whole grains, and high-quality proteins,
-                     and avoid those high in sugar, fats, and processed ingredients to reduce the risk of chronic diseases.<br><br></p>
+                <div class="foodparagraph-col">
+                    <p>Active women should aim for <span class="highlight">1,200-1,600 calories</span> daily, while men should target <span class="highlight">1,800-2,000 calories</span>. Focus on nutrient-rich foods like vegetables, fruits, whole grains, and proteins, and limit sugar, fats, and processed foods to stay healthy.</p>
+                    <img class="inside-pic" src="{% static 'img/pyramid.jpg' %}">
+                </div>
                 </div>
             </div>
 
             <div class="exercise-row">
                 <div class="exerciseparagraph-col">
                     <h3>EXERCISE</h3>
-                    <p>Pairing a balanced diet with regular exercise is essential for maintaining weight and promoting overall health.
-                     Exercise helps burn excess calories, rebuild lost muscle mass, and supports long-term wellness. It also enhances cardiovascular health, mood, and energy levels,
-                     and can prevent chronic diseases like diabetes and heart disease.<br><br>
-                     A good exercise routine should include activity three times a week, with sessions lasting 20-60 minutes.
-                     Beginners, especially those who are significantly overweight, should start with lighter activities and consider seeking guidance from a healthcare professional or certified trainer for personalized advice.</p>
+                    <p>Combining a balanced diet with regular exercise is key to maintaining weight and overall health. Exercise burns calories, builds muscle, and boosts heart health, mood, and energy while preventing diseases. <span class="highlight">Aim for 20-60 minutes of activity, three times a week</span>. Beginners should start light and seek professional advice if needed.</p>
+                    <i class='bx bx-dumbbell' ></i>
+                    <i class='bx bx-cycling'></i>
+                    <i class='bx bx-run' ></i>
+                    <i class='bx bx-swim' ></i>
                 </div>
                 <div class="exercise-col">
                     <img src="{% static 'img/gym3_800x533.jpeg' %}">

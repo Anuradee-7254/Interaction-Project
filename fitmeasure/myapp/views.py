@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login
 
+
 def homepage(request):
     return render(request, "homepage.html")
 
@@ -53,3 +54,32 @@ def user_login(request):
             messages.error(request, 'Invalid username or password')
     form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
+
+
+from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
+from .models import BMIRecord
+import json
+
+@login_required
+def homepage(request):
+    bmi_records = BMIRecord.objects.filter(user=request.user)
+    return render(request, 'homepage.html', {'bmi_records': bmi_records})
+
+@login_required
+def save_bmi(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        BMIRecord.objects.create(
+            user=request.user,
+            bmi=data['bmi'],
+            weight=data['weight'],
+            height=data['height']
+        )
+        return JsonResponse({'status': 'success'})
+    
+@login_required
+def get_bmi_records(request):
+    records = BMIRecord.objects.filter(user=request.user).values('date', 'bmi', 'weight', 'height')
+    return JsonResponse(list(records), safe=False)
+
