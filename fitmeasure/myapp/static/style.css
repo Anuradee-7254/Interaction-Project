@@ -391,21 +391,21 @@ p{
 }
 
 .foodparagraph-col {
-    display: flex; /* Enables Flexbox to position items side by side */
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    align-items: center; /* Vertically aligns items in the middle */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     flex-basis: 48%;
     margin: 0;
 }
 
 .inside-pic {
-    width: 50%; /* Adjust width of the image */
+    width: 50%;
     object-fit: cover;
 }
 
 .foodparagraph-col p {
-    flex: 1; /* Takes up remaining space */
-    margin: 0; /* Removes default margin around the text */
+    flex: 1; 
+    margin: 0;
 }
 
 
@@ -565,7 +565,7 @@ p{
 .popup {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures space between content and button */
+    justify-content: space-between;
     width: 600px;
     height: 560px;
     background: white;
@@ -612,7 +612,7 @@ p{
     border: 0;
     font-size: 16px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-top: auto; /* Automatically pushes button to the bottom */
+    margin-top: auto;
     margin-bottom: 50px;
 }
 
@@ -631,51 +631,8 @@ p{
 }
 
 .food-description {
-    font-size: 14px; /* Adjust font size for better readability */
+    font-size: 14px;
     color: black;
-    margin-bottom: 10px; /* Add some space above the description */
+    margin-bottom: 10px;
 }
 
-
-
-
-
-/* Media Queries for different screen sizes */
-
-@media (max-width: 768px) {
-    .container {
-        width: 80%;
-    }
-
-    .result .result-col {
-        flex-basis: 31%;
-    }
-
-    .food-col, .exercise-col {
-        flex-basis: 100%;
-    }
-
-    .box {
-        flex-basis: 100%;
-        margin: 15px 0;
-    }
-
-    .exerciseparagraph-col {
-        flex-basis: 100%;
-        margin: 15px 0;
-    }
-
-    .disease-col {
-        flex-basis: 45%;
-    }
-
-    .info {
-        margin: 10px 100px;
-    }
-
-    .popup {
-        width: 90%;
-        height: auto;
-        padding: 20px;
-    }
-}
